@@ -1,0 +1,21 @@
+# git aliases
+
+alias g='git'
+compdef g=git
+
+alias gs='git status -s'
+compdef _git gs=git-status
+
+alias gl='git pull'
+compdef _git gl=git-pull
+
+alias gp='git push'
+compdef _git gp=git-push
+
+alias ga='git add -A && gs'
+compdef _git ga=git-add
+
+# alias gc='git commit -v -m'
+# compdef _git gc=git-commit
+gc() { git commit -v -m "$*" }
+compdef _git gc=git-commit

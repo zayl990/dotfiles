@@ -32,7 +32,7 @@ setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
 setopt cdablevars
 
 # try to correct command line spelling
-setopt CORRECT CORRECT_ALL
+# setopt CORRECT CORRECT_ALL
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
