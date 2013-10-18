@@ -1,5 +1,15 @@
-# git aliases
+# list direcory contents
+alias lsa='ls -laG'
+alias l='ls -G'
 
+# basic directory operations
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# show history
+alias history='fc -l 1'
+
+# git aliases
 alias g='git'
 compdef g=git
 
@@ -20,3 +30,6 @@ compdef _git glo=git-log
 
 gc() { git commit -v -m "$*" }
 alias gca='git commit --amend'
+
+# rails
+alias fsd='foreman s -f Procfile.dev'

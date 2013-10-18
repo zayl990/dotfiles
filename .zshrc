@@ -13,26 +13,32 @@ source /usr/local/bin/virtualenvwrapper.sh
 # postgres
 export PGHOST=localhost
 
+# functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # completion
-autoload -U compinit
-compinit
+autoload -U compinit && compinit
 
 # expand functions in the prompt
 setopt prompt_subst
 
+# colors
+autoload -U colors && colors
+
 # prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
+export PS1='[%{$fg[green]%}${SSH_CONNECTION+"%n@%m:"}%~%{$reset_color%}] '
+export RPS1='%{$fg[yellow]%}$(git_prompt_info)%{$reset_color%}'
 
 # ignore duplicate history entries
 setopt histignoredups
 
-# awesome cd movements from zshkit
-setopt AUTOCD
-setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
-setopt cdablevars
-
 # try to correct command line spelling
 # setopt CORRECT CORRECT_ALL
+
+# history
+export HISTSIZE=2000
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
