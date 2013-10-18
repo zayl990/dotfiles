@@ -15,7 +15,8 @@ compdef _git gp=git-push
 alias ga='git add -A && gs'
 compdef _git ga=git-add
 
-# alias gc='git commit -v -m'
-# compdef _git gc=git-commit
+alias glo='git log'
+compdef _git glo=git-log
+
 gc() { git commit -v -m "$*" }
-compdef _git gc=git-commit
+alias gca='git commit --amend'
