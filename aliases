@@ -22,6 +22,9 @@ compdef _git gl=git-pull
 alias gp='git push'
 compdef _git gp=git-push
 
+alias gco='git checkout'
+compdef _git gco=git-checkout
+
 alias ga='git add -A && gs'
 
 alias glo='git log'
@@ -31,4 +34,5 @@ gc() { git commit -v -m "$*" }
 alias gca='git commit --amend'
 
 # rails
-alias fsd='foreman s -f Procfile.dev'
+alias fsd='bundle exec foreman s -f Procfile.dev'
+alias deploy='bundle exec cap deploy'

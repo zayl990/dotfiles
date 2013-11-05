@@ -13,16 +13,18 @@ parse_git_dirty() {
   local CLEAN_MESSAGE='nothing to commit (working directory clean)'
   if [[ "$(command git config --get oh-my-zsh.hide-status)" != "1" ]]; then
     if [[ $POST_1_7_2_GIT -gt 0 ]]; then
-          SUBMODULE_SYNTAX="--ignore-submodules=dirty"
+      SUBMODULE_SYNTAX="--ignore-submodules=dirty"
     fi
+
     if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-        GIT_STATUS=$(command git status -s ${SUBMODULE_SYNTAX} -uno 2> /dev/null | tail -n1)
+      GIT_STATUS=$(command git status -s ${SUBMODULE_SYNTAX} -uno 2> /dev/null | tail -n1)
     else
-        GIT_STATUS=$(command git status -s ${SUBMODULE_SYNTAX} 2> /dev/null | tail -n1)
+      GIT_STATUS=$(command git status -s ${SUBMODULE_SYNTAX} 2> /dev/null | tail -n1)
     fi
+
     if [[ -n $GIT_STATUS ]]; then
       # dirty
-      echo "%{$fg[red]%} !%{$reset_color%}"
+      echo "%{$fg[red]%} *%{$reset_color%}"
     else
       # clean
       echo ""
