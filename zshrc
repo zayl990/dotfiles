@@ -1,3 +1,6 @@
+# homebrew
+export PATH=/usr/local/bin:$PATH
+
 # rvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -42,3 +45,6 @@ export HISTSIZE=2000
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
