@@ -35,4 +35,10 @@ alias gca='git commit --amend'
 
 # rails
 alias fsd='bundle exec foreman s -f Procfile.dev'
-alias deploy='bundle exec cap deploy'
+alias rdm='bundle exec rake db:migrate'
+alias cpd='bundle exec cap production deploy'
+alias csd='bundle exec cap staging deploy'
+
+# foreman
+alias cpf='bundle exec cap production foreman:start'
+alias cpfs='bundle exec cap production foreman:stop'

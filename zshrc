@@ -43,8 +43,16 @@ setopt histignoredups
 # history
 export HISTSIZE=2000
 
+# plugins
+for function in ~/.zsh/plugins/*; do
+  source $function
+done
+
+# problem with git
+setopt NO_NOMATCH
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
