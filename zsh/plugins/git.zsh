@@ -1,5 +1,8 @@
 # from oh-my-zsh
 
+# problem with git
+setopt NO_NOMATCH
+
 function git_prompt_info() {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
@@ -34,3 +37,27 @@ parse_git_dirty() {
     echo ""
   fi
 }
+
+# git aliases
+alias g='git'
+compdef g=git
+
+alias gs='git status -s'
+compdef _git gs=git-status
+
+alias gl='git pull'
+compdef _git gl=git-pull
+
+alias gp='git push'
+compdef _git gp=git-push
+
+alias gco='git checkout'
+compdef _git gco=git-checkout
+
+alias ga='git add -A && gs'
+
+alias glo='git log'
+compdef _git glo=git-log
+
+gc() { git commit -v -m "$*" }
+alias gca='git commit --amend'

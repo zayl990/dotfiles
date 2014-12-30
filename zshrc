@@ -2,24 +2,28 @@
 export PATH=/usr/local/bin:$PATH
 
 # rvm
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# chef-dk
+export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
+
+# heroku toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # pip
-export PIP_REQUIRE_VIRTUALENV=true
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+# export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # postgres
 export PGHOST=localhost
-
-# functions
-for function in ~/.zsh/functions/*; do
-  source $function
-done
 
 # completion
 autoload -U compinit && compinit
@@ -48,11 +52,5 @@ for function in ~/.zsh/plugins/*; do
   source $function
 done
 
-# problem with git
-setopt NO_NOMATCH
-
 # aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# [[ -f ~/.aliases ]] && source ~/.aliases
