@@ -1,5 +1,5 @@
 # homebrew
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # rvm
 # [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
@@ -45,6 +45,7 @@ setopt histignoredups
 # setopt CORRECT CORRECT_ALL
 
 # history
+setopt APPEND_HISTORY
 export HISTSIZE=2000
 
 # plugins
